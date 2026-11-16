@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jarvis</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #fff; padding: 20px; }
+    #chat { min-height: 200px; margin-bottom: 15px; }
+    input { padding: 12px; width: 65%; font-size: 16px; }
+    button { padding: 12px 18px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Mera Jarvis</h2>
+  <div id="chat"></div>
+  <input id="box" placeholder="Kuch likho...">
+  <button onclick="bhejo()">Bhejo</button>
+
+  <script>
+    function bhejo() {
+      var baat = document.getElementById("box").value;
+      var chat = document.getElementById("chat");
+      chat.innerHTML += "<p>Aap: " + baat + "</p>";
+
+      if (baat == "hello") {
+        chat.innerHTML += "<p>Jarvis: Namaste! Kaise ho?</p>";
+      } else {
+        chat.innerHTML += "<p>Jarvis: Abhi samajh nahi aaya.</p>";
+      }
+      document.getElementById("box").value = "";
+    }
+  </script>
+</body>
+</html>
